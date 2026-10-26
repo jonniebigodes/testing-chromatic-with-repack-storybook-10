@@ -18,6 +18,14 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   CustomUIComponent: LiteUI,
+  //Required for Chromatic
+  /* enableWebsockets: true,
+  host: "react-native.capture.chromatic.com",
+  port: 7007,
+  secured: true,
+  // Recommended
+  onDeviceUI: false,
+  shouldPersistSelection: false, */
 });
 
 AppRegistry.registerComponent(appName, () => StorybookUIRoot);
