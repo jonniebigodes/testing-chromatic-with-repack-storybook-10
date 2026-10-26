@@ -12,20 +12,20 @@ import { name as appName } from '../app.json';
  * with application decorators/providers (theme, i18n, state, navigation, etc).
  */
 const StorybookUIRoot = view.getStorybookUI({
-  shouldPersistSelection: true,
+  //shouldPersistSelection: true, ## dev mode
   storage: {
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
   },
   CustomUIComponent: LiteUI,
   //Required for Chromatic
-  /* enableWebsockets: true,
+  enableWebsockets: true,
   host: "react-native.capture.chromatic.com",
   port: 7007,
   secured: true,
   // Recommended
   onDeviceUI: false,
-  shouldPersistSelection: false, */
+  shouldPersistSelection: false,
 });
 
 AppRegistry.registerComponent(appName, () => StorybookUIRoot);

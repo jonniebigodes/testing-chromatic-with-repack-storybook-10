@@ -76,3 +76,6 @@ yarn-error.log
 
 *storybook.log
 storybook-static
+
+/misc-info-issues/
+/custom-build-dir/
