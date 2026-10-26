@@ -1,6 +1,4 @@
-const {
-  withStorybook,
-} = require('@storybook/react-native/withStorybook');
+const { withStorybook } = require('@storybook/react-native/withStorybook');
 
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
@@ -10,6 +8,8 @@ const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
  *
  * @type {import('@react-native/metro-config').MetroConfig}
  */
-const config = {};
+const config = { enabled: true };
 
-module.exports = withStorybook(mergeConfig(getDefaultConfig(__dirname), config));
+module.exports = withStorybook(
+  mergeConfig(getDefaultConfig(__dirname), config),
+);
