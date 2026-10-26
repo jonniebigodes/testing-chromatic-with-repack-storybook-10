@@ -17,7 +17,7 @@ import { View } from 'react-native';
 import { Page } from './Page';
 
 const meta = {
-  title: 'Example/Page',
+  title: 'Pages/Page',
   component: Page,
   decorators: [
     (Story) => (
