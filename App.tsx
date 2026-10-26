@@ -11,8 +11,21 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import StorybookUI from './.rnstorybook';
+
+// Injected by rspack DefinePlugin (see rspack.config.mjs). When false, the
+// Storybook branch is dead-code-eliminated and StorybookPlugin stubs the import.
+declare const STORYBOOK_ENABLED: boolean;
 
 function App() {
+  if (STORYBOOK_ENABLED) {
+    return <StorybookUI />;
+  }
+
+  return <MainApp />;
+}
+
+function MainApp() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
