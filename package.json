@@ -9,7 +9,22 @@
     "start": "react-native start",
     "test": "jest",
     "storybook:ios": "cross-env STORYBOOK_ENABLED=true react-native run-ios",
-    "storybook:android": "cross-env STORYBOOK_ENABLED=true react-native run-android"
+    "storybook:android": "cross-env STORYBOOK_ENABLED=true react-native run-android",
+    "android:release:storybook": "cross-env STORYBOOK_ENABLED=true npx react-native webpack-bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "webpackstart:nocache": "cross-env STORYBOOK_ENABLED=true npx react-native webpack-start --reset-cache",
+    "android:clean": "npm run storybook:android -- --no-packager",
+    "android:release": "npx react-native webpack-bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android:manual-release-configuration": "cross-env STORYBOOK_ENABLED=true npx react-native webpack-bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && gradlew.bat assembleRelease",
+    "chromatic:manual-release-configuration": "npx react-native webpack-bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && gradlew.bat assembleRelease",
+    "chromatic": "chromatic --project-token=chpt_2bd7f9964fa29fc",
+    "chromatic:build-react-native": "chromatic --project-token=chpt_2bd7f9964fa29fc -d custom-build-dir",
+    "chromatic:rn-help": "chromatic react-native-build --help",
+    "chromatic:dualbuild": "chromatic react-native-build",
+    "chromatic:generate-manifest": "chromatic generate-manifest -o custom-build-dir",
+    "chromatic:ios-release": "chromatic react-native-build --platform ios",
+    "chromatic:android-release": "chromatic react-native-build --platform android",
+   "chromatic:ios-release-configuration": "chromatic react-native-build --platform ios -d custom-build-dir",
+    "chromatic:android-release-configuration": "chromatic react-native-build --platform android -d custom-build-dir"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "latest",
