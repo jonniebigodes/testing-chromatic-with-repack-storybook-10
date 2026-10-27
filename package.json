@@ -18,8 +18,6 @@
     "android:manual-release-configuration": "cross-env STORYBOOK_ENABLED=true npx react-native webpack-bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && gradlew.bat assembleRelease",
     "chromatic:manual-release-configuration": "npx react-native webpack-bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && gradlew.bat assembleRelease",
     "chromatic": "chromatic --project-token=chpt_6e478a84056a890",
-    "chromatic:build:android": "node scripts/chromatic-build.mjs android",
-    "chromatic:build:ios": "node scripts/chromatic-build.mjs ios",
     "chromatic:upload": "chromatic -d storybook-static",
     "chromatic:build-react-native": "chromatic --project-token=chpt_6e478a84056a890 -d custom-build-dir",
     "chromatic:rn-help": "chromatic react-native-build --help",
