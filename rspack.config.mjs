@@ -40,10 +40,12 @@ export default Repack.defineRspackConfig({
   plugins: [
     new Repack.RepackPlugin(),
     new rspack.DefinePlugin({
-      STORYBOOK_ENABLED: JSON.stringify(storybookEnabled),
+      //STORYBOOK_ENABLED: JSON.stringify(storybookEnabled),
+      STORYBOOK_ENABLED: true,
     }),
     new StorybookPlugin({
-      enabled: storybookEnabled,
+      //enabled: storybookEnabled,
+      enabled: true,
       configPath: path.resolve(__dirname, './.rnstorybook'),
     }),
   ],

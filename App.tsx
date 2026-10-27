@@ -15,14 +15,15 @@ import StorybookUI from './.rnstorybook';
 
 // Injected by rspack DefinePlugin (see rspack.config.mjs). When false, the
 // Storybook branch is dead-code-eliminated and StorybookPlugin stubs the import.
-declare const STORYBOOK_ENABLED: boolean;
+//declare const STORYBOOK_ENABLED: boolean;
 
 function App() {
-  if (STORYBOOK_ENABLED) {
-    return <StorybookUI />;
-  }
-
-  return <MainApp />;
+  /*  if (STORYBOOK_ENABLED) {
+     return <StorybookUI />;
+   }
+ 
+   return <MainApp />; */
+  return <StorybookUI />;
 }
 
 function MainApp() {
